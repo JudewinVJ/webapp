@@ -5,5 +5,5 @@ A simple WebApp API that connects to Postgresql HA Database
 ```helm install ./webapp --name webapp```
 This installs a simple webapp that connects to a highly available Postgresql database. 
 
-![Image description] 
+![Image description] SimpleArchitecture.png	
 Postgresql HA - Source: 
