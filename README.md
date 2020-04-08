@@ -34,7 +34,7 @@ This installs a simple webapp that connects to a highly available Postgresql dat
    If the primary pod fails, the pgpool detects that using health check and fails it over to the next in order.
    ### Load Balancing id disabled in PGPool - so write operation isn't penalized
   ## Scope to Improve
-  Also by default Auto Failover (Fault tolerance isnt enabled in pgpool.conf), we can set that up editing pgpool.conf
-  Set Affinity to different AZ for each pod 
-  Also Postgresql allows various slaves from various regions to join (for DR purposes).
+  1. By default Auto Failover (Fault tolerance isnt enabled in pgpool.conf), we can set that up editing pgpool.conf
+  2. Set Affinity to different AZ for each pod 
+  3. Also Postgresql allows various slaves from various regions to join (for DR purposes).
 
