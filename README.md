@@ -10,10 +10,10 @@ This installs a simple webapp that connects to a highly available Postgresql dat
 
 ## How does it work ?
   Once the chart is installed, you will be able to access the service via the configured ingress in the webservice.
-  1. Now lets hit a url which is not present in the DB - curl -v http://<svc-url>/pingpong! --> Returns 404
-  2. ets add a url to the DB - curl -X POST http://<svc-url>/ -d "full_url=https://redhat.com" --> Returns EZpNfRi
+  1. Now lets hit a url which is not present in the DB - curl -v http://(svc-url)/pingpong! --> Returns 404
+  2. ets add a url to the DB - curl -X POST http://(svc-url)/ -d "full_url=https://redhat.com" --> Returns EZpNfRi
   3. Now lets hit the url added to the DB
-  curl -X GET http://svc-url/EZpNfRi -v
+  curl -X GET http://(svc-url)/EZpNfRi -v
 *   Trying 192.168.99.100...
 * Connected to 192.168.99.100 (192.168.99.100) port 31317 (#0)
 > GET /EZpNfRi HTTP/1.1
