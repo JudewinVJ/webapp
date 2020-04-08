@@ -183,7 +183,7 @@ postgresql-ha:
   pgpool:
     ## Number of replicas to deploy
     ##
-    replicaCount: 1
+    replicaCount: 2
 
     ## Additional pod annotations
     ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
