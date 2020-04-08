@@ -26,3 +26,8 @@ This installs a simple webapp that connects to a highly available Postgresql dat
 < Content-Length: 0
 < Content-Type: text/plain; charset=utf-8
 
+## How to ensure backend is highly available ?
+   PGPool is an internal loadbalancer for our frontend to connect with the database. 
+   ### How to ensure PGpool's reliability ?
+   Create multiple replicas of PGpool and ensure using PDB that atleast 1 instance is available at any point in time.
+
