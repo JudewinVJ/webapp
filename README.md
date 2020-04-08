@@ -4,6 +4,7 @@ A simple WebApp API that connects to Postgresql HA Database
 ### Helm chart can be installed using the following command: 
 ```helm install ./webapp --name webapp```
 This installs a simple webapp that connects to a highly available Postgresql database. 
+This is a URL shortner webapp that helps redirect to other url's which are longer, using a code for each.
 
 ## Architecture
 ![Image description](SimpleArchitecture.png)	
@@ -32,9 +33,12 @@ This installs a simple webapp that connects to a highly available Postgresql dat
    Create multiple replicas of PGpool and ensure using PDB that atleast 1 instance is available at any point in time.
    ### How to ensure automatic fail over ?
    If the primary pod fails, the pgpool detects that using health check and fails it over to the next in order.
-   ### Load Balancing id disabled in PGPool - so write operation isn't penalized
-  ## Scope to Improve
-  1. By default Auto Failover (Fault tolerance isnt enabled in pgpool.conf), we can set that up editing pgpool.conf
-  2. Set Affinity to different AZ for each pod 
-  3. Also Postgresql allows various slaves from various regions to join (for DR purposes).
-
+   Even if the node in which the primary pod fails, within seconds it redirects the connections over to secondary pod.
+   ### What happens when we update DB version ? 
+   In that case, pgpool kicks in and does an automatic fail over to the other available pod.
+   ### Scope to Improve
+    1. Set Affinity to different AZ for each pod or anti-affinity within the same AZ to schedule on different nodes.
+    2. Also Postgresql allows various slaves from various regions to join the replication (for DR purposes).
+### Source Project References 
+#### Postgresql - Helm Chart - https://github.com/bitnami/charts/tree/master/bitnami/postgresql-ha
+#### WebAPP - https://github.com/xcoulon/go-url-shortener
