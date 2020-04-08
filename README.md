@@ -39,6 +39,6 @@ This is a URL shortner webapp that helps redirect to other url's which are longe
    ### Scope to Improve
     1. Set Affinity to different AZ for each pod or anti-affinity within the same AZ to schedule on different nodes.
     2. Also Postgresql allows various slaves from various regions to join the replication (for DR purposes).
-## Source Projects 
-### Postgresql - Helm Chart - https://github.com/bitnami/charts/tree/master/bitnami/postgresql-ha
-### WebAPP - https://github.com/xcoulon/go-url-shortener
+### Source Project References 
+#### Postgresql - Helm Chart - https://github.com/bitnami/charts/tree/master/bitnami/postgresql-ha
+#### WebAPP - https://github.com/xcoulon/go-url-shortener
