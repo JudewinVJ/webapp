@@ -281,10 +281,11 @@ postgresql-ha:
     ## Specify dictionary of scripts to be run everytime Pgpool container is initialized
     ## Alternatively, you can put your scripts under the files/pgpool-entrypoint-initdb.d directory
     ##
-    # initdbScripts:
-    #   my_init_script.sh: |
-    #      #!/bin/sh
-    #      echo "Do something."
+    initdbScripts:
+      my_init_script.sh: |
+          #!/bin/sh
+          sed -i "s/failover_on_backend_error = 'off'/failover_on_backend_error = 'on'/g" /opt/bitnami/pgpool/conf/pgpool.conf
+          sed -i "s/replication_mode = off/replication_mode = on/g" /opt/bitnami/pgpool/conf/pgpool.conf
 
     ## ConfigMap with scripts to be run everytime Pgpool container is initialized
     ## NOTE: This will override pgpool.initdbScripts
