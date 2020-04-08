@@ -4,6 +4,7 @@ A simple WebApp API that connects to Postgresql HA Database
 ### Helm chart can be installed using the following command: 
 ```helm install ./webapp --name webapp```
 This installs a simple webapp that connects to a highly available Postgresql database. 
+This is a URL shortner webapp that helps redirect to other url's which are longer, using a code for each.
 
 ## Architecture
 ![Image description](SimpleArchitecture.png)	
@@ -38,4 +39,6 @@ This installs a simple webapp that connects to a highly available Postgresql dat
    ### Scope to Improve
     1. Set Affinity to different AZ for each pod or anti-affinity within the same AZ to schedule on different nodes.
     2. Also Postgresql allows various slaves from various regions to join the replication (for DR purposes).
-
+## Source Projects 
+### Postgresql - Helm Chart - https://github.com/bitnami/charts/tree/master/bitnami/postgresql-ha
+### WebAPP - https://github.com/xcoulon/go-url-shortener
