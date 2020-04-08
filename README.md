@@ -30,4 +30,10 @@ This installs a simple webapp that connects to a highly available Postgresql dat
    PGPool is an internal loadbalancer for our frontend to connect with the database. 
    ### How to ensure PGpool's reliability ?
    Create multiple replicas of PGpool and ensure using PDB that atleast 1 instance is available at any point in time.
+   ### How to ensure automatic fail over ?
+   If the primary pod fails, the pgpool detects that using health check and fails it over to the next in order.
+   ### Load Balancing id disabled in PGPool - so write operation isn't penalized
+   ### Replication turned on to return identical results from primary and secondary at any time. 
+Set Affinity to different AZ for each pod 
+Also Postgresql allows various slaves from various regions to join (for DR purposes).
 
